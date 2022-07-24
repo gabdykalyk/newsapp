@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="text-center mb-5 mt-5">Все новости</h1>
+
+<div id="articles">
+  <% @articles.each do |article| %>
+  <% if article.visible %>
+    <div class="article-item col-md-7 mt-4 p-5 bg-light text-dark rounded">
+      <h2 class="text-center">
+        <%= article.title %>
+      </h2>
+      <div class="text-center mt-4">
+        <%= image_tag article.image.thumb('500x300#').url if article.image_stored? %>
+      </div>
+      <p class="mt-4 fs-4">
+        <%= article.description %>
+      </p>
+      <p class="text-center">
+        <%= link_to "Показать новость", article, class: "btn btn-lg btn-dark col-md-6" %>
+      </p>
+    </div>
+  <% end %>
+
+
+  <% end %>
+  
+</div>
