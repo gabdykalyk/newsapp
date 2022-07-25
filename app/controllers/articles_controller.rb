@@ -58,6 +58,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def client
+    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
@@ -66,6 +70,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :description, :image, :visible)
+      params.require(:article).permit(:title, :description, :image, :visible, :image_url)
     end
 end

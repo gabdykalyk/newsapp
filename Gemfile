@@ -8,6 +8,10 @@ gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 
 gem 'dragonfly'
 
+gem 'react-rails'
+
+gem 'webpacker'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -21,7 +25,7 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+# gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
