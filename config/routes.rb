@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root 'client#main'
   resources :client
+
+  get '*path', to: 'articles#error', via: :all
 end

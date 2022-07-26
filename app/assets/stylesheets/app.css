@@ -5,3 +5,11 @@
 .admin {
   margin-left: 200px;
 }
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}

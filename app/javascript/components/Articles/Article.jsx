@@ -17,6 +17,9 @@ const Article = (props) => {
           <div className='mt-4 fs-4'>
             {props.attributes.description}
           </div>
+          <div className='mt-4 fs-6'>
+            Дата публикации: {props.attributes.created_at.slice(0,10).split("-").reverse().join(".")}
+          </div>
           <div className='text-center'>
           <Link className='mt-4 btn btn-dark' to={`/client/${props.attributes.id}`}>Показать новость</Link>
           </div>

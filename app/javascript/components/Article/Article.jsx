@@ -20,7 +20,7 @@ const Article =()=> {
       setArticle(resp.data)
       setLoaded(true)
     })
-    .catch( resp => console.log(resp) )
+    .catch( resp => console.log("Error") )
   }, [])
 
   return (

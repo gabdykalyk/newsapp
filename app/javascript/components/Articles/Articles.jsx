@@ -7,6 +7,9 @@ const Articles =()=> {
 
   const [articles, setArticles] = useState([])
 
+  const [toggle, setToggle] = useState(false)
+
+
   useEffect(()=>{
 
     axios.get('/articles.json')
@@ -15,11 +18,6 @@ const Articles =()=> {
     })
     .catch( resp => console.log(resp) )
   }, [articles.lengh])
-
-  const sortArticles = () => {
-    const articlessorted = articles.sort((a,b) => new Date(...a.created_at.slice(0,9).split('-').reverse()) - new Date(...b.created_at.slice(0,9).split('-').reverse()))
-    console.log(articlessorted)
-  }
 
   const article = articles.map( item => {
     return(
@@ -30,13 +28,29 @@ const Articles =()=> {
   })
 
 
+  let articlessorted = [...articles]
+  articlessorted = articlessorted.sort((a,b) => new Date(...a.created_at.slice(0,10).split('-').reverse()) - new Date(...b.created_at.slice(0,10).split('-').reverse()))
+
+  const sorted = articlessorted.map( item => {
+    return(
+      <Article
+        attributes={item}
+      />
+    )
+  })
 
   return (
     <div>
       <Header />
-      {console.log(articles)}
-      {article}
-      <button onClick={sortArticles}>Нажми на меня</button>
+      <div className='container mt-5'>
+        <button className='btn btn-primary' onClick={() => setToggle(!toggle)}>Сортировать по дате</button>
+      </div>
+      <div className={toggle ? 'hidden' : 'visible'}>
+        {article}
+      </div>
+      <div className={toggle ? 'visible' : 'hidden'}>
+        {sorted}
+      </div>
     </div>
   )
 }
