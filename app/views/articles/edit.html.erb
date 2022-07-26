@@ -1,12 +1,17 @@
-<h1 class="mt-4">Изменить новость</h1>
+<%= render 'articles/header' %>
 
-<%= render "form", article: @article %>
+<div class="container">
+  <h1 class="mt-4">Изменить новость</h1>
 
-<br>
+  <%= render "form", article: @article %>
 
-<div>
-  <%= link_to "Показать новость", @article, class: "btn btn-dark" %>
-  <%= link_to "Вернуться к новостям", articles_path, class: "btn btn-dark" %>
+  <br>
 
+  <div>
+    <%= link_to "Показать новость", @article, class: "btn btn-dark" %>
+    <%= link_to "Вернуться к новостям", articles_path, class: "btn btn-dark" %>
+
+
+  </div>
 
 </div>

@@ -5,4 +5,8 @@ class ClientController < ApplicationController
   def show
     
   end
+
+  def main
+    
+  end
 end

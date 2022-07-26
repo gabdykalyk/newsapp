@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Image = (props) => {
+const NewsImage = (props) => {
   return(
     <div>
       <img src={require(`../../../../public/system/dragonfly/development/${props.attributes.image_uid}`)} alt="" />
@@ -8,4 +8,4 @@ const Image = (props) => {
   )
 }
 
-export default Image;
+export default NewsImage;
