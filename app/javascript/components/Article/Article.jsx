@@ -3,6 +3,7 @@ import axios from 'axios'
 import NewsImage from './NewsImage'
 import { Link } from 'react-router-dom'
 import Header from '../Header/Header'
+import ErrorPage from '../ErrorPage/ErrorPage'
 
 
 const Article =()=> {
@@ -20,9 +21,19 @@ const Article =()=> {
       setArticle(resp.data)
       setLoaded(true)
     })
-    .catch( resp => console.log("Error") )
+    .catch( resp => (isEmpty = false) )
   }, [])
 
+  function isEmpty(obj) {
+    for (let key in obj) {
+      return false;
+    }
+    return true;
+  }
+
+  if (isEmpty(article)) {
+    return <ErrorPage />
+  }
   return (
     <div>
       <Header />
